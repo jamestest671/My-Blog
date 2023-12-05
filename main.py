@@ -270,8 +270,8 @@ def send_email(name, email, phone, message):
     email_message = f"Subject:New Message\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage:{message}"
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
-        connection.login(MAIL_ADDRESS, MAIL_APP_PW)
-        connection.sendmail(MAIL_ADDRESS, MAIL_APP_PW, email_message)
+        connection.login(user=MAIL_ADDRESS, password=MAIL_APP_PW)
+        connection.sendmail(email, MAIL_ADDRESS, email_message)
 
 
 if __name__ == "__main__":
